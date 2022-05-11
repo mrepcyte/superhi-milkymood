@@ -4,6 +4,7 @@ import Header from './components/header'
 import Footer from './components/footer'
 import ImgBox from './components/imagebox'
 import Modal from './components/modal'
+import ModalInner from './components/modalInner'
 
 //pretier-ignore
 const matrix = [
@@ -62,7 +63,11 @@ const App = () => {
   return (
     <div className="App">
       <GlobalStyle />
-      {showModal && <Modal toggleModal={toggleModal} />}
+      {showModal && (
+        <Modal toggleModal={toggleModal}>
+          <ModalInner />
+        </Modal>
+      )}
       <Header />
       <Footer />
       <Wrapper
